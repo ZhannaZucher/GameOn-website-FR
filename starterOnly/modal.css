@@ -1,24 +1,21 @@
+@import url(normalize.css);
+
 :root {
   --font-default: "DM Sans", Arial, Helvetica, sans-serif;
   --font-slab: var(--font-default);
   --modal-duration: 0.8s;
 }
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 /* Landing Page */
 
 body {
-  /*margin: 0;*/
   display: flex;
   flex-direction: column;
   background-image: url("background.png");
   font-family: var(--font-default);
   font-size: 1em;
   max-width: 1440px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 p {
@@ -27,7 +24,7 @@ p {
 }
 
 img {
-  /*padding-right: 1rem;*/
+width: 100%;
 }
 
 .topnav {
@@ -49,7 +46,7 @@ img {
   display: block;
   color: #232323;
   text-align: right;
-  padding: 7px 10px;
+  padding: 7px 0.625em;
   margin-left: 3px;
   text-decoration: none;
   font-weight: 500;
@@ -57,13 +54,13 @@ img {
 }
 
 .topnav a:hover {
-  background-color: #ff0000;
+  background-color: #FE142F;
   color: #ffffff;
   border-radius: 10px;
 }
 
 .topnav a.active {
-  background-color: #ff0000;
+  background-color: #FE142F;
   color: #ffffff;
   border-radius: 10px;
 }
@@ -81,10 +78,19 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+  .header-logo {
+    flex: 0 1 33%;
+    }
+  .topnav {
+    margin: 40px 30px 30px;
+  }
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
+    color: #FE142F;
+    font-size: 1.2em;
+    margin-left: 0;
   }
 }
 
@@ -104,12 +110,11 @@ img {
 
 
 
- @media screen and (max-width: 540px) {
+@media screen and (max-width: 540px) {
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
   }
 } 
 
@@ -129,7 +134,7 @@ main {
 
 .modal-btn {
   font-size: 145%;
-  background: #fe142f;
+  background: #FE142F;
   display: flex;
   margin: auto;
   padding: 2em;
