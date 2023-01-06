@@ -21,7 +21,6 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
-//Issue 1:
 //Close modal form 
 function closeModal() {
   modalbg.style.display = "none";
@@ -30,14 +29,11 @@ function closeModal() {
 //Close modal event
 closeBtn.forEach((btn) => btn.addEventListener("click", closeModal));
 
-
-//Issue 2:
-// DOM Elements to be checked on submitting
 const form = document.getElementsByTagName('form')[0];
 
 //Function for input's values validation
 
-function validate() {
+function showError() {
 
   const firstName = document.getElementById('first');
   const lastName = document.getElementById('last');
@@ -53,6 +49,9 @@ function validate() {
     document
       .querySelector('#error-firstName')
       .textContent = 'Veuillez renseigner votre prénom.';
+    firstName
+      .closest(".formData")
+      .setAttribute('data-error-visible', 'true');
   }
 
   //if the input value is empty or less of 2 characters 
@@ -61,6 +60,10 @@ function validate() {
     document
       .querySelector('#error-lastName')
       .textContent = 'Veuillez renseigner votre nom.';
+    lastName
+      .closest(".formData")
+      .setAttribute('data-error-visible', 'true');
+    
   }
 
   //if the input value is missing or the value does not match with requiered via 'type' attribute
@@ -69,6 +72,9 @@ function validate() {
     document
       .querySelector('#error-email')
       .textContent = 'Veuillez renseigner votre email.';
+    email
+      .closest(".formData")
+      .setAttribute('data-error-visible', 'true');
   }
 
   //if the birthdate value is missing
@@ -77,6 +83,9 @@ function validate() {
     document
       .querySelector('#error-birthdate')
       .textContent = 'Veuillez renseigner votre date de naissance.';
+    birthDate
+      .closest(".formData")
+      .setAttribute('data-error-visible', 'true');
   }
 
   //if the input value is missing or the value does not match with requiered via type attribute
@@ -85,6 +94,9 @@ function validate() {
     document
       .querySelector('#error-contest')
       .textContent = 'Veuillez renseigner le nombre de tournois.';
+    contestQuantity
+      .closest(".formData")
+      .setAttribute('data-error-visible', 'true');
   }
 
   //if the requiered terms are not accepted
@@ -108,4 +120,3 @@ function validate() {
     }
   }
 }
-
