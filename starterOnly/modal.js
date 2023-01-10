@@ -34,7 +34,8 @@ closeBtn.forEach((btn) => btn.addEventListener("click", closeModal));
 
 //Function for input's values validation and errors alerting
 
-function showError() {
+
+function validateForm() {
 
   const firstName = document.getElementById('first');
   const lastName = document.getElementById('last');
@@ -87,7 +88,7 @@ function showError() {
   }
 
   //if the birthdate value is missing
-  if (birthDate.value === '' || !/^\d{2}[./-]\d{2}[./-]\d{4}$/.test(birthDate.value)) {
+  if (birthDate.value === '') {
   //show this error message
     document
       .querySelector('#error-birthdate')
@@ -118,7 +119,7 @@ function showError() {
       .textContent = 'Veuillez accepter les conditions d\'utilisation.';
     formIsValid = false;
   }
- //if no one checkbox is chaecked
+ //if no one checkbox is checked
   if (!loc1.checked && !loc2.checked && !loc3.checked && !loc4.checked && !loc5.checked && !loc6.checked) {
   //show this error message
     document
@@ -126,6 +127,18 @@ function showError() {
       .textContent = 'Veuillez choisir une ville.';
     formIsValid = false;
   }
+
   return formIsValid;
 }
 
+// 
+const form = document.getElementsByTagName('form')[0];
+const submitBtn = document.getElementsByClassName('btn-submit')[0];
+
+submitBtn.addEventListener('click', function (event) {
+  if (!validateForm()) {
+    event.preventDefault();
+  } else {
+    alert ('ok');
+  }
+});
