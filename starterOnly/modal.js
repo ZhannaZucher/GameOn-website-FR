@@ -224,15 +224,10 @@ function validateForm() {
   return formIsValid;
 }
 
-
 //submit modal event
 form.addEventListener('submit', function (event) {
   event.preventDefault();
   if (validateForm()) {
-    alert ('ok');
+    alert('ok');
   }
 });
-
-
-
-
