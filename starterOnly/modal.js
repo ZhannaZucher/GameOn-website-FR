@@ -16,6 +16,7 @@ const formData = document.querySelectorAll(".formData");
 const closeBtn = document.querySelectorAll(".close");
 const form = document.getElementsByTagName('form')[0];
 const submitBtn = document.getElementsByClassName('btn-submit')[0];
+const confirmForm = document.getElementById("confirmation");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -228,6 +229,12 @@ function validateForm() {
 form.addEventListener('submit', function (event) {
   event.preventDefault();
   if (validateForm()) {
-    alert('ok');
+    confirmRegistration()
   }
 });
+
+//at succesful submitting a confirmation message appears instead of the modal
+function confirmRegistration() {
+  form.style.display = "none";
+  confirmForm.style.display = "flex";
+}
