@@ -553,6 +553,25 @@ footer {
   .header-logo {
     flex: 0 1 33%;
   }
+  .main-navbar {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  .main-navbar a {
+    padding: 5px;
+    height: 30px;
+    font-size: smaller;
+    font-weight: 400;
+  }
+  .main-navbar a:first-child {
+    margin-top: 30px;
+  }
+    
+  .header-logo {
+    align-self: flex-start;
+    margin-top: 10px;
+  }
   .topnav {
     margin: 40px 30px 30px;
   }
@@ -566,6 +585,7 @@ footer {
     font-size: 1.2em;
     margin-left: 0;
   }
+
   .topnav.responsive {
     position: relative;
   }
