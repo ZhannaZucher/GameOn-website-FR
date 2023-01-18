@@ -36,6 +36,7 @@ closeBtn.forEach((btn) => btn.addEventListener("click", closeModal));
 
 
 /******Functions for input's values validation and errors alerting*****/
+
 // Firstname input value validating function
 function validateFirstName(formIsValid) {
   const firstName = document.getElementById('first');
@@ -92,7 +93,7 @@ function validateLastName(formIsValid) {
 function validateEmail(formIsValid) {
   const email = document.getElementById('email');
   //if the input value is missing or the value does not match with requiered via 'type' attribute
-  if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(email.value)) {
+  if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value)) {
     //show this error message
     document
       .querySelector('#error-email')
